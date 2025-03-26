@@ -8,7 +8,10 @@ from utilitiesPackage.CSV_Utilities import *
 from PDFPackage.PDFUtilities import *
 
 if __name__ == "__main__":
-
+    
+    display_team_logo()
+    
+    """
     CSV_Processor = MMLU_CSV_Processor("dataPackage/MMLU/data/", ["management_test.csv"])
     questions = CSV_Processor.read_data()
     print(len(questions), "questions read")
@@ -46,7 +49,7 @@ if __name__ == "__main__":
     questions_written = write_questions_to_text_files("MMLU", questions)
     print(questions_written, "questions written to the file.")
     
-    """
+    
     # This code is commented out
     #Reading_Level.test01()
 
@@ -61,3 +64,5 @@ if __name__ == "__main__":
     for key in reading_level_indices.keys():
         print(key, ":", reading_level_indices[key])
     """
+    
+    
