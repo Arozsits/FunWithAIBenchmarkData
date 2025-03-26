@@ -1,6 +1,14 @@
-# utilities.py
-# Bill Nicholson
-# nicholdw@ucmail.uc.edu
+# File Name : utilities.py
+# Student Name: Nate Hoang, Andrew Rozsits, Ray Happel
+# email:  hoangnbd@mail.uc.edu, rozsitaj@mailk.uc.edu, happelrc@mail.uc.edu
+# Assignment Number: Assignment 08
+# Due Date:   3/26
+# Course #/Section:   4010-001
+# Semester/Year:   Spring 25
+# Brief Description of the assignment:  Using github and working as a group to produce an image and a cool visual design
+
+# Brief Description of what this module does. This module links our python to data sets to produce visuals
+# Citations: Chatgpt, https://www.w3schools.com/, gemini
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
