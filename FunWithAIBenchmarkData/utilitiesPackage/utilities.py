@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from collections import Counter
 import os
+from PIL import Image
+import numpy as np
 
 def display_visuals(questions, image_path="images/golbat.png"):
     """
@@ -33,7 +35,30 @@ def display_visuals(questions, image_path="images/golbat.png"):
     # Create side-by-side subplots
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))  # Width x Height in inches
 
+    # Plot the image on ax1
+    if os.path.exists(image_path):
+        img = mpimg.imread(image_path)
+        ax1.imshow(img)
+        ax1.axis('off')
+        ax1.set_title("Team Golbat")
+    else:
+        ax1.text(0.5, 0.5, "Image Not Found", fontsize=12, ha='center')
+        ax1.axis('off')
+
+    # Plot the bar chart on ax2
+    ax2.bar(distribution.keys(), distribution.values(), color='skyblue')
+    ax2.set_title("Correct Answer Distribution")
+    ax2.set_xlabel("Answer Choice")
+    ax2.set_ylabel("Count")
+    ax2.grid(axis='y', linestyle='--', alpha=0.7)
+
+    plt.tight_layout()
+    plt.show()
     
+    if os.path.exists(image_path):
+        img = Image.open(image_path).resize((200, 200))  # Resize to 200x200 pixels
+        img = np.array(img)  # Convert to array for imshow
+        ax1.imshow(img)
 
 """
     def write_questions_to_text_files(benchmark_name, questions):

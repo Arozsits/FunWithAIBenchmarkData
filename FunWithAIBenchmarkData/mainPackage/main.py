@@ -18,15 +18,16 @@ from utilitiesPackage.CSV_Utilities import *
 from PDFPackage.PDFUtilities import *
 
 if __name__ == "__main__":
-
+    
+    # Read all questions from CSV
+    CSV_Processor = MMLU_CSV_Processor("dataPackage/MMLU/data/", ["management_test.csv"])
+    questions = CSV_Processor.read_data()
+    print(len(questions), "questions read")
 
     # Show team image + answer distribution in one window
     display_visuals(questions)
 
-     # Read all questions from CSV
-    CSV_Processor = MMLU_CSV_Processor("dataPackage/MMLU/data/", ["management_test.csv"])
-    questions = CSV_Processor.read_data()
-    print(len(questions), "questions read")
+    
     
     """
     CSV_Processor = MMLU_CSV_Processor("dataPackage/MMLU/data/", ["management_test.csv"])
