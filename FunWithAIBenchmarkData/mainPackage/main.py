@@ -1,6 +1,16 @@
-# main.py
-# Bill Nicholson
-# nicholdw@ucmail.uc.edu
+# File Name : main.py
+# Student Name: Nate Hoang, Andrew Rozsits, Ray Happel
+# email:  hoangnbd@mail.uc.edu, rozsitaj@mailk.uc.edu, happelrc@mail.uc.edu
+# Assignment Number: Assignment 08
+# Due Date:   3/26
+# Course #/Section:   4010-001
+# Semester/Year:   Spring 25
+# Brief Description of the assignment:  Using github and working as a group to produce an image and a cool visual design
+
+# Brief Description of what this module does. This module links our python to data sets to produce visuals
+# Citations: Chatgpt, https://www.w3schools.com/, gemini
+
+# Anything else that's relevant:
 
 from readingLevelPackage.readingLevel import Reading_Level
 from utilitiesPackage.utilities import *
@@ -8,8 +18,15 @@ from utilitiesPackage.CSV_Utilities import *
 from PDFPackage.PDFUtilities import *
 
 if __name__ == "__main__":
-    
-    display_team_logo()
+
+
+    # Show team image + answer distribution in one window
+    display_visuals(questions)
+
+     # Read all questions from CSV
+    CSV_Processor = MMLU_CSV_Processor("dataPackage/MMLU/data/", ["management_test.csv"])
+    questions = CSV_Processor.read_data()
+    print(len(questions), "questions read")
     
     """
     CSV_Processor = MMLU_CSV_Processor("dataPackage/MMLU/data/", ["management_test.csv"])
