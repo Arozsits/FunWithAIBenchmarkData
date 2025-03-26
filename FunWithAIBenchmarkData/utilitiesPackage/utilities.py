@@ -2,32 +2,30 @@
 # Bill Nicholson
 # nicholdw@ucmail.uc.edu
 
-import os
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+from collections import Counter
 import os
 
-
-
-def display_team_logo(image_path="images/golbat.png"):
+def display_visuals(questions, image_path="images/golbat.png"):
     """
-    Displays the team logo image (e.g., Golbat) using matplotlib.
-    Parameters:image_path (str): Relative or absolute path to the image file.
-    Returns:If the image file exists, it will be displayed in a 200x200 pixel window (roughly). 
-            If none Returns: Image not found at {image_path}
+    Displays a Golbat image and a bar chart of correct answer distribution side-by-side.
+
+    Parameters:
+        questions (list): List of question dictionaries with 'correct answer' key.
+        image_path (str): Path to the team image file.
+
+    Sources:
+        - matplotlib: https://matplotlib.org/stable/gallery/index.html
     """
-    if os.path.exists(image_path):
-            img = mpimg.imread(image_path)
-            plt.figure(figsize=(2, 2))  # Roughly 200x200 pixels at 100 dpi
-            plt.imshow(img)
-            plt.axis('off')
-            plt.title("Team Golbat", fontsize=10)
-            plt.show()
-    else:
-            print(f"Image not found at: {image_path}")
-        
+    # Prepare the answer distribution data
+    correct_answers = [q.get("correct answer", "").strip() for q in questions if "correct answer" in q]
+    distribution = Counter(correct_answers)
 
+    # Create side-by-side subplots
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))  # Width x Height in inches
 
+    
 
 """
     def write_questions_to_text_files(benchmark_name, questions):

@@ -8,8 +8,11 @@ from utilitiesPackage.CSV_Utilities import *
 from PDFPackage.PDFUtilities import *
 
 if __name__ == "__main__":
-    
-    display_team_logo()
+
+
+    # Show team image + answer distribution in one window
+    display_visuals(questions)
+
     
     """
     CSV_Processor = MMLU_CSV_Processor("dataPackage/MMLU/data/", ["management_test.csv"])
